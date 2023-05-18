@@ -4,6 +4,7 @@ import Home from "../FontPage/Home";
 import AllToys from "../FontPage/AllToys";
 import Login from "../AuthenticationPage/Login";
 import Register from "../AuthenticationPage/Register";
+import AddToys from "../FontPage/AddToys";
 
 const router = createBrowserRouter([
     {
@@ -15,16 +16,20 @@ const router = createBrowserRouter([
                 element: <Home></Home>
             },
             {
+                path: 'login',
+                element: <Login></Login>
+            },
+            {
+                path: 'register',
+                element: <Register></Register>
+            },
+            {
                 path: "allToys",
                 element: <AllToys></AllToys>
             },
             {
-                path:'login',
-                element:<Login></Login>
-            },
-            {
-                path:'register',
-                element:<Register></Register>
+                path:"addToys",
+                element:<AddToys></AddToys>
             }
         ]
     }

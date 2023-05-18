@@ -30,7 +30,7 @@ const Header = () => {
                             {
                                 user?.email ? <>
                                     <li><Link >My Toys</Link></li>
-                                    <li><Link >Add Toys</Link></li>
+                                    <li><Link to='/addToys'>Add Toys</Link></li>
                                     <div>
                                         <img id='title' src={user?.photoURL} className='rounded' width={'30px'} height={'30px'} alt="" srcset="" />
                                         <ReactTooltip anchorId='title' place='bottom-0' content={user?.displayName}> </ReactTooltip>
@@ -51,7 +51,7 @@ const Header = () => {
                         {
                             user?.email ? <>
                                 <li><Link >My Toys</Link></li>
-                                <li><Link >Add Toys</Link></li>
+                                <li><Link to="/addToys">Add Toys</Link></li>
                                 <div>
                                     <img id='title' src={user?.photoURL} className='rounded' width={'30px'} height={'30px'} alt="" srcset="" />
                                     <ReactTooltip anchorId='title' place='bottom-0' content={user?.displayName}> </ReactTooltip>

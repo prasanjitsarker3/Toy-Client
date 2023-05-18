@@ -3,6 +3,7 @@ import register from '../../assets/image/registration.avif'
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from './AuthProvider';
 import { updateProfile } from 'firebase/auth';
+import SocialLogin from './SocialLogin';
 
 const Register = () => {
     const { userCreated, userLogOut } = useContext(AuthContext);
@@ -91,6 +92,7 @@ const Register = () => {
                             <p className='text-center'>Have an account? <Link to='/login' className='text-blue-500'>Login</Link></p>
                             <p className='text-center text-green-500'>{success}</p>
                             <p className='text-center text-red-600'>{error}</p>
+                            <SocialLogin></SocialLogin>
                         </form>
                     </div>
                 </div>

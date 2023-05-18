@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import loginPhoto from '../../assets/image/login.avif'
 import { Link } from 'react-router-dom';
 import { AuthContext } from './AuthProvider';
+import SocialLogin from './SocialLogin';
 
 const Login = () => {
     const { userLogin } = useContext(AuthContext);
@@ -43,7 +44,7 @@ const Login = () => {
                         <div className="w-1/2 mr-12 mx-auto">
                             <img src={loginPhoto} alt="" srcset="" />
                         </div>
-                        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mb-0">
                             <form onSubmit={handleLogin} className="card-body">
                                 <p className='text-center font-serif text-base'>Please Login !</p>
                                 <div className="form-control">
@@ -67,7 +68,9 @@ const Login = () => {
                                 <p className='text-center'>Already have an account? <Link to='/register' className='text-blue-500'>Registration</Link></p>
                                 <p className='text-center text-green-500'>{success}</p>
                                 <p className='text-center text-red-600'>{error}</p>
+                                 <SocialLogin></SocialLogin>
                             </form>
+
                         </div>
                     </div>
                 </div>
