@@ -5,6 +5,8 @@ import AllToys from "../FontPage/AllToys";
 import Login from "../AuthenticationPage/Login";
 import Register from "../AuthenticationPage/Register";
 import AddToys from "../FontPage/AddToys";
+import MyToys from "../FontPage/MyToys";
+import UpdateInvention from "../SharedPage/UpdateInvention";
 
 const router = createBrowserRouter([
     {
@@ -28,8 +30,17 @@ const router = createBrowserRouter([
                 element: <AllToys></AllToys>
             },
             {
-                path:"addToys",
-                element:<AddToys></AddToys>
+                path: "addToys",
+                element: <AddToys></AddToys>
+            },
+            {
+                path: "myToys",
+                element: <MyToys></MyToys>
+            },
+            {
+                path: "updateInvention/:id",
+                element: <UpdateInvention></UpdateInvention>,
+                loader:({params}) => fetch(`http://localhost:5000/allInvention/${params.id}`)
             }
         ]
     }

@@ -50,7 +50,7 @@ const Header = () => {
                         <li><Link >Blog</Link></li>
                         {
                             user?.email ? <>
-                                <li><Link >My Toys</Link></li>
+                                <li><Link to='/myToys'>My Toys</Link></li>
                                 <li><Link to="/addToys">Add Toys</Link></li>
                                 <div>
                                     <img id='title' src={user?.photoURL} className='rounded' width={'30px'} height={'30px'} alt="" srcset="" />
