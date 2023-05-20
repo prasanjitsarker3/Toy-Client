@@ -33,7 +33,7 @@ const Header = () => {
                                     <li><Link >My Toys</Link></li>
                                     <li><Link to='/addToys'>Add Toys</Link></li>
                                     <div>
-                                        <img id='title' src={user?.photoURL} className='rounded' width={'30px'} height={'30px'} alt="" srcset="" />
+                                        <img id='title' src={user?.photoURL} className='rounded' width={'30px'} height={'30px'} />
                                         <ReactTooltip anchorId='title' place='bottom-0' content={user?.displayName}> </ReactTooltip>
                                     </div>
                                     <li><Link onClick={handleLogOut}>Log out</Link></li>
@@ -54,8 +54,8 @@ const Header = () => {
                                 <li><Link to='/myToys'>My Toys</Link></li>
                                 <li><Link to="/addToys">Add Toys</Link></li>
                                 <div>
-                                    <img id='title' src={user?.photoURL} className='rounded' width={'30px'} height={'30px'} alt="" srcset="" />
-                                    <ReactTooltip anchorId='title' place='bottom-0' content={user?.displayName}> </ReactTooltip>
+                                    <img id='title' src={user?.photoURL} className='rounded' width={'30px'} height={'30px'}  />
+                                    <ReactTooltip anchorId='title' place='bottom' content={user?.displayName}> </ReactTooltip>
                                 </div>
                                 <li><Link onClick={handleLogOut}>Log out</Link></li>
                             </> : <li><Link to='/login'>Login</Link></li>

@@ -21,7 +21,6 @@ const UpdateInvention = () => {
             .then(data => {
                 console.log(data);
             })
-        console.log(data);
 
     };
     return (
@@ -33,7 +32,7 @@ const UpdateInvention = () => {
                 <div className='p-8'>
                     <h1 className='text-center'>Update Invention Science Information</h1>
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        
+
                         <div className='grid grid-cols-1 md:grid-cols-2 gap-5 py-3'>
                             <input placeholder='Seller Name' defaultValue={user?.displayName} {...register("sellerName")} className='h-[50px] px-5 rounded' />
                             <input placeholder="Details ..." required {...register("details", { required: true })} className='h-[50px] px-5 rounded' />

@@ -9,6 +9,7 @@ import MyToys from "../FontPage/MyToys";
 import UpdateInvention from "../SharedPage/UpdateInvention";
 import AllToyDetails from "../SharedPage/AllToyDetails";
 import PrivateRoute from "./PrivateRoute";
+import CategoryDetails from "../SharedPage/CategoryDetails";
 
 const router = createBrowserRouter([
     {
