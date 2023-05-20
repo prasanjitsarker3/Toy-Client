@@ -1,11 +1,12 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from "react-hook-form";
 import { AuthContext } from '../AuthenticationPage/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const AddToys = () => {
     const { user } = useContext(AuthContext)
     const [selectedInvention, setSelectedInvention] = useState(null)
-
+    useTitle('addToys')
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
         data.invention = selectedInvention;

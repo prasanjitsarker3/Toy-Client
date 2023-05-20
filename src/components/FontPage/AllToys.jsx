@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import LoadInventionDataCart from '../SharedPage/LoadInventionDataCart';
+import useTitle from '../../hooks/useTitle';
 
 const AllToys = () => {
     const [loadInvention, setLoadInvention] = useState([]);
+    useTitle('alltoys');
     useEffect(() => {
         fetch('http://localhost:5000/allInvention')
             .then(res => res.json())

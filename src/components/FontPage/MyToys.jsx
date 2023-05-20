@@ -1,12 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../AuthenticationPage/AuthProvider';
 import MyToyCart from '../SharedPage/MyToyCart';
+import useTitle from '../../hooks/useTitle';
 
 const MyToys = () => {
     const { user } = useContext(AuthContext);
     const [loadData, setLoadData] = useState([]);
-    const [search, setSearch]=useState('');
-    const [searchData, setSearchData]=useState([])
+    const [search, setSearch] = useState('');
+    const [searchData, setSearchData] = useState([]);
+
+    useTitle('myToys')
     console.log(search);
     useEffect(() => {
         fetch(`http://localhost:5000/myInvention/${user?.email}`)
@@ -26,21 +29,13 @@ const MyToys = () => {
                 setLoadData(remaining)
             })
     }
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const form = event.target;
-        const valueSearch = form.value.value;
-        setSearch(valueSearch)
-        form.reset()
-
+    const handleSearch=()=>{
+        fetch(`http://localhost:5000/inventionSearch/${search}`)
+        .then(res => res.json())
+        .then(data => {
+            setLoadData(data)
+        })
     }
-    // useEffect(()=>{
-    //     fetch(`http://localhost:5000/inventionSearch/${search}`)
-    //     .then(res=> res.json())
-    //     .then(data =>{
-    //        setSearchData(data);
-    //     })
-    // },[])
 
     const handleUpdateInfo = (id) => {
         console.log(id);
@@ -52,10 +47,18 @@ const MyToys = () => {
             <div className=''>
                 <h1>{searchData.length}</h1>
                 {/* <h1>MY Invention Information :{loadData.length}</h1> */}
-                <form onSubmit={handleSubmit} className='flex justify-center items-center'>
-                    <input type="text" name='value' placeholder="Type here" className="input input-bordered input-info w-full max-w-xs" />
-                    <button type='submit' className="btn btn-outline btn-info">Search</button>
-                </form>
+                <div className='flex justify-center items-center'>
+                    <input type="text" onChange={(event) => setSearch(event.target.value)} placeholder="Search..." className="input input-bordered input-info w-full max-w-xs" />
+                    <button type='submit' onClick={handleSearch} className="btn btn-outline btn-info">Search</button>
+                </div>
+
+                {/* <div className='flex justify-center py-5'>
+                    <select className="select select-primary  flex justify-center">
+                        <option >Price-Ascending</option>
+                        <option>Price-Descending</option>
+
+                    </select>
+                </div> */}
 
             </div>
             <div className="mx-12 py-12">

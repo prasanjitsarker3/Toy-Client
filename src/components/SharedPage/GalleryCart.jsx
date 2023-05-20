@@ -8,4 +8,4 @@ const GalleryCart = ({gallery}) => {
     );
 };
 
-export default GalleryCart;
+export default GalleryCart;     

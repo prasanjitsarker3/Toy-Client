@@ -3,6 +3,7 @@ import loginPhoto from '../../assets/image/login.avif'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from './AuthProvider';
 import SocialLogin from './SocialLogin';
+import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
     const { userLogin } = useContext(AuthContext);
@@ -10,6 +11,7 @@ const Login = () => {
     const [error, setError] = useState('');
     const location = useLocation();
     const navigate = useNavigate();
+    useTitle('login')
 
     const from = location?.state?.from?.pathname || '/'
 

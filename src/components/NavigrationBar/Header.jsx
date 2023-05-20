@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../AuthenticationPage/AuthProvider';
 import "react-tooltip/dist/react-tooltip.css";
 import { Tooltip as ReactTooltip } from "react-tooltip";
+import useTitle from '../../hooks/useTitle';
 
 const Header = () => {
     const { user, userLogOut } = useContext(AuthContext);
+    // const title=useTitle();
     const handleLogOut = () => {
         userLogOut()
             .then(() => { })

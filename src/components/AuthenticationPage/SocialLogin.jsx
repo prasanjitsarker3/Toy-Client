@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
 import google from '../../assets/image/googleSociasl.png';
 import { AuthContext } from './AuthProvider';
+import useTitle from '../../hooks/useTitle';
 const SocialLogin = () => {
     const { googleLogin } = useContext(AuthContext);
+    useTitle("social Page")
     const handleGoogleSign = () => {
         googleLogin()
             .then(result => {

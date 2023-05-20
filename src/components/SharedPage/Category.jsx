@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import CategoryCart from './CategoryCart';
+import useTitle from '../../hooks/useTitle';
 
 
 
 const Category = () => {
-    const [category, setCategory] = useState("mathToys");
-    const [data, setData] = useState([])
+    const [category, setCategory] = useState("engineeringKits");
+    const [data, setData] = useState([]);
+    useTitle("category")
     useEffect(() => {
         fetch(`http://localhost:5000/allCategories/${category}`)
             .then(res => res.json())

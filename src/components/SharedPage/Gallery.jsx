@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import GalleryCart from './GalleryCart';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Gallery = () => {
     const [data, setData] = useState([]);
     useEffect(() => {
@@ -10,6 +11,9 @@ const Gallery = () => {
                 setData(data);
             })
     }, [])
+    useEffect(() => {
+        AOS.init();
+    }, []);
     return (
         <div>
 
@@ -17,7 +21,7 @@ const Gallery = () => {
                 <h1 className='text-2xl font-serif font-extralight'>Gallery </h1>
                 <p className='text-lg'>Science Kits, Math learning toys, Engineering Kits</p>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-0 px-20 pb-8'>
+            <div data-aos="zoom-in-up" className='grid grid-cols-1 md:grid-cols-3 gap-0 px-20 pb-8'>
                 {
                     data.map(gallery => <GalleryCart gallery={gallery} key={gallery._id}></GalleryCart>)
                 }

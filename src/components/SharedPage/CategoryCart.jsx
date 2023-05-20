@@ -8,7 +8,7 @@ const CategoryCart = ({ data }) => {
         <div className='mx-auto p-5'>
             <div className="card w-92 bg-base-100 shadow-xl">
                 <figure className="px-10 pt-10">
-                    <img src={photo} alt="Shoes" className="rounded-xl" />
+                    <img src={photo} alt="Shoes" className="rounded-xl h-[160px]" />
                 </figure>
                 <div className="card-body ">
                     <h2 className="card-title  text-center">{toyName}</h2>
