@@ -9,6 +9,7 @@ const Banner = () => {
                         <div class="text-black text-center md:text-left p-3">
                             <h1 class="text-3xl font-semibold font-serif mb-4">Explore the Wonders of Science!</h1>
                             <p class="text-base font-medium   mb-8">Toy science kits play a vital role in introducing children to STEM (Science, Technology, Engineering, and Mathematics) education. By fostering a sense of curiosity and discovery, they inspire young minds and lay the foundation for future scientific exploration and learning.</p>
+                            <p className='text-base font-serif font-normal pb-3'>Science Kits, Math learning toys, Engineering Kits</p>
                             <button className="btn btn-success">Explore </button>
                         </div>
                         <div class="md:text-right">

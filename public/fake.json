@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Cizz Calculation",
+        "photo": "https://img.freepik.com/free-photo/child-toys-still-life_23-2148144864.jpg?size=626&ext=jpg&ga=GA1.1.2060036261.1681297115&semt=ais",
+        "price": "300",
+        "rating": "4"
+    },
+    {
+        "name": "Robotics Material",
+        "photo": "https://img.freepik.com/premium-photo/two-toy-robots-with-rocket-flashlight_782419-9035.jpg?size=626&ext=jpg&ga=GA1.1.2060036261.1681297115&semt=ais",
+        "price": "354",
+        "rating": "5"
+    },
+    {
+        "name": "Science Toy Kits",
+        "photo": "https://img.freepik.com/premium-photo/cute-indian-baby-girl-playing-with-toy-crane-wearing-yellow-construction-hat-hard-hat-childhood-education-concept_466689-15495.jpg?size=626&ext=jpg&ga=GA1.1.2060036261.1681297115&semt=ais",
+        "price":"200",
+        "rating":"4.5"
+    },
+    {
+        "name": "Alphabet Game",
+        "photo": "https://img.freepik.com/premium-psd/baby-wooden-blocks-set-mockup-front-view_1332-4627.jpg?size=626&ext=jpg&ga=GA1.1.2060036261.1681297115&semt=ais",
+        "price" :"120",
+        "rating":"5"
+    }
+]

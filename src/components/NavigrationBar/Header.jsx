@@ -11,6 +11,7 @@ const Header = () => {
             .then(() => { })
             .catch(error => {
                 console.log(error);
+                
             })
     }
 
@@ -49,7 +50,7 @@ const Header = () => {
                         <li><Link to='/allToys'>All Toys</Link></li>
                         <li><Link >Blog</Link></li>
                         {
-                            user?.email ? <>
+                            user?.email ? <> 
                                 <li><Link to='/myToys'>My Toys</Link></li>
                                 <li><Link to="/addToys">Add Toys</Link></li>
                                 <div>
