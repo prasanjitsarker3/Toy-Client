@@ -3,6 +3,7 @@ import Banner from '../SharedPage/Banner';
 import Gallery from '../SharedPage/Gallery';
 import Category from '../SharedPage/Category';
 import PopularToy from '../SharedPage/PopularToy';
+import CustomInfo from '../SharedPage/CustomInfo';
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
             <Gallery></Gallery>
             <Category></Category>
             <PopularToy></PopularToy>
+            <CustomInfo></CustomInfo>
         </div>
     );
 };
