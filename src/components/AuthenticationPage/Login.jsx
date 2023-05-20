@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import loginPhoto from '../../assets/image/login.avif'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from './AuthProvider';
 import SocialLogin from './SocialLogin';
 
@@ -8,6 +8,10 @@ const Login = () => {
     const { userLogin } = useContext(AuthContext);
     const [success, setSuccess] = useState('');
     const [error, setError] = useState('');
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const from = location?.state?.from?.pathname || '/'
 
     const handleLogin = (event) => {
         event.preventDefault();
@@ -30,6 +34,7 @@ const Login = () => {
                 setError('');
                 setSuccess("Successfully User Login !");
                 form.reset();
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 setSuccess(success);
@@ -68,7 +73,7 @@ const Login = () => {
                                 <p className='text-center'>Already have an account? <Link to='/register' className='text-blue-500'>Registration</Link></p>
                                 <p className='text-center text-green-500'>{success}</p>
                                 <p className='text-center text-red-600'>{error}</p>
-                                 <SocialLogin></SocialLogin>
+                                <SocialLogin></SocialLogin>
                             </form>
 
                         </div>

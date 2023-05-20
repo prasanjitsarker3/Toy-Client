@@ -8,6 +8,7 @@ import AddToys from "../FontPage/AddToys";
 import MyToys from "../FontPage/MyToys";
 import UpdateInvention from "../SharedPage/UpdateInvention";
 import AllToyDetails from "../SharedPage/AllToyDetails";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -41,12 +42,12 @@ const router = createBrowserRouter([
             {
                 path: "updateInvention/:id",
                 element: <UpdateInvention></UpdateInvention>,
-                loader:({params}) => fetch(`http://localhost:5000/allInvention/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/allInvention/${params.id}`)
             },
             {
-                path:"allToyDetails/:id",
-                element:<AllToyDetails></AllToyDetails>,
-                loader:({params}) => fetch(`http://localhost:5000/allInvention/${params.id}`)
+                path: "allToyDetails/:id",
+                element: <PrivateRoute><AllToyDetails></AllToyDetails></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/allInvention/${params.id}`)
             }
         ]
     }
