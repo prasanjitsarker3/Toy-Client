@@ -6,7 +6,7 @@ const Footer = () => {
         <div>
             <footer className="footer p-10 bg-base-200 text-base-content">
                 <div className='mx-auto text-lg'>
-                    <img src={footer} alt="" srcset="" className=' rounded-full' height={'100px'} width={'100px'} />
+                    <img src="https://img.freepik.com/free-vector/red-atom-with-core-orbits-electrons-isolated-3d-nuclear-chemistry-technology-concept_333792-89.jpg?w=740&t=st=1684670081~exp=1684670681~hmac=74abe9f0e9e1f308e25fc0fef9fac73ba2a4a9d73d91def9e14d930c01e7f7e8" alt="" srcset="" className=' rounded-full' height={'100px'} width={'100px'} />
                     <p>Invention Science<br />Providing reliable tech since 1992</p>
                     <p>Copyright © 2023 - All right reserved by IS</p>
                 </div>
