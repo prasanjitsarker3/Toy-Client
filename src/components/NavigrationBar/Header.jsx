@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../AuthenticationPage/AuthProvider';
 import "react-tooltip/dist/react-tooltip.css";
+// import "./styles.css";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import useTitle from '../../hooks/useTitle';
 
@@ -13,7 +14,7 @@ const Header = () => {
             .then(() => { })
             .catch(error => {
                 console.log(error);
-                
+
             })
     }
 
@@ -34,9 +35,12 @@ const Header = () => {
                                 user?.email ? <>
                                     <li><Link >My Toys</Link></li>
                                     <li><Link to='/addToys'>Add Toys</Link></li>
-                                    <div>
-                                        <img id='title' src={user?.photoURL} className='rounded' width={'30px'} height={'30px'} />
-                                        <ReactTooltip anchorId='title' place='bottom-0' content={user?.displayName}> </ReactTooltip>
+                                    <div className='cursor-pointer flex justify-center items-center'>
+
+                                        {/* <ReactTooltip anchorId='title' place='bottom' content=> </ReactTooltip> */}
+                                        <div className="tooltip" data-tip={user?.displayName}>
+                                            <img id='title' src={user?.photoURL} className='rounded' width={'30px'} height={'30px'} />
+                                        </div>
                                     </div>
                                     <li><Link onClick={handleLogOut}>Log out</Link></li>
                                 </> : <li><Link to='/login'>Login</Link></li>
@@ -52,12 +56,15 @@ const Header = () => {
                         <li><Link to='/allToys'>All Toys</Link></li>
                         <li><Link >Blog</Link></li>
                         {
-                            user?.email ? <> 
+                            user?.email ? <>
                                 <li><Link to='/myToys'>My Toys</Link></li>
                                 <li><Link to="/addToys">Add Toys</Link></li>
-                                <div>
-                                    <img id='title' src={user?.photoURL} className='rounded' width={'30px'} height={'30px'}  />
-                                    <ReactTooltip anchorId='title' place='bottom' content={user?.displayName}> </ReactTooltip>
+                                <div className='cursor-pointer flex justify-center items-center'>
+                                    <div className="tooltip" data-tip={user?.displayName}>
+                                        <img id='title' src={user?.photoURL} className='rounded' width={'30px'} height={'30px'} />
+                                    </div>
+                                    {/* <img id='title' src={user?.photoURL} className='rounded' width={'30px'} height={'30px'} />
+                                    <ReactTooltip anchorId='title' place='bottom' content={user?.displayName}> </ReactTooltip> */}
                                 </div>
                                 <li><Link onClick={handleLogOut}>Log out</Link></li>
                             </> : <li><Link to='/login'>Login</Link></li>

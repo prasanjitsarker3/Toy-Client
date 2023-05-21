@@ -29,12 +29,12 @@ const MyToys = () => {
                 setLoadData(remaining)
             })
     }
-    const handleSearch=()=>{
+    const handleSearch = () => {
         fetch(`http://localhost:5000/inventionSearch/${search}`)
-        .then(res => res.json())
-        .then(data => {
-            setLoadData(data)
-        })
+            .then(res => res.json())
+            .then(data => {
+                setLoadData(data)
+            })
     }
 
     const handleUpdateInfo = (id) => {
@@ -42,23 +42,26 @@ const MyToys = () => {
         <label htmlFor="my-modal-5" className="btn">open modal</label>
 
     }
+    const handleAscending = () => {
+        const sort = [...loadData].sort((a, b) => a.price - b.price)
+        setLoadData(sort);
+    }
+    const handleDescending = () => {
+        const sort = [...loadData].sort((a, b) => b.price - a.price)
+        setLoadData(sort);
+    }
     return (
         <div>
             <div className=''>
-                <h1>{searchData.length}</h1>
-                {/* <h1>MY Invention Information :{loadData.length}</h1> */}
                 <div className='flex justify-center items-center'>
                     <input type="text" onChange={(event) => setSearch(event.target.value)} placeholder="Search..." className="input input-bordered input-info w-full max-w-xs" />
                     <button type='submit' onClick={handleSearch} className="btn btn-outline btn-info">Search</button>
                 </div>
 
-                {/* <div className='flex justify-center py-5'>
-                    <select className="select select-primary  flex justify-center">
-                        <option >Price-Ascending</option>
-                        <option>Price-Descending</option>
-
-                    </select>
-                </div> */}
+                <div className='flex justify-center py-5'>
+                    <button type='submit' onClick={handleAscending} className="btn btn-outline btn-info">Ascending</button>
+                    <button type='submit' onClick={handleDescending} className="btn btn-outline btn-info">Descending</button>
+                </div>
 
             </div>
             <div className="mx-12 py-12">

@@ -23,8 +23,8 @@ const Category = () => {
     return (
         <div>
             <Tabs className="text-center">
-                <TabList className='text-2xl font-serif font-extralight pt-10'>
-                    <Tab onClick={() => handleTab("mathToys")}>Engineering Toys</Tab>
+                <TabList className='text-xl font-serif font-extralight pt-10 '>
+                    <Tab onClick={() => handleTab("mathToys")} >Engineering Toys</Tab>
                     <Tab onClick={() => handleTab("engineeringKits")}>Science Toys</Tab>
                     <Tab onClick={() => handleTab("scienceKits")}>Math Toys</Tab>
                 </TabList>
