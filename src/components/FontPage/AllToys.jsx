@@ -14,11 +14,6 @@ const AllToys = () => {
     }, [])
     return (
         <div>
-            <h1>All Toys</h1>
-            <p>Length: {loadInvention.length}</p>
-            <div>
-
-            </div>
             <div className="mx-12 py-12">
                 <table className="table w-full">
                     <thead>

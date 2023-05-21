@@ -1,9 +1,27 @@
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
+import { useContext } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
+import { Link, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import { AuthContext } from '../AuthenticationPage/AuthProvider';
 
 const CategoryCart = ({ data }) => {
     const { sellerName, toyName, email, Category, details, price, rating, quantity, photo, _id } = data;
+    const { user } = useContext(AuthContext);
+    const navigation= useNavigate();
+    const handleModal = () => {
+
+        if (!user) {
+            Swal.fire({
+                title: 'Error!',
+                text: 'Do you want to continue',
+                icon: 'error',
+                confirmButtonText: 'Cool'
+            })
+            navigation("/login")
+        }
+    }
     return (
         <div className='mx-auto p-5'>
             <div className="card w-92 bg-base-100 shadow-xl">
@@ -25,7 +43,7 @@ const CategoryCart = ({ data }) => {
                             />
                         </div>
                         <div className='cursor-pointer'>
-                            <FaArrowRight />
+                            <Link to={`/category/${_id}`}><FaArrowRight onClick={handleModal} /></Link>
                         </div>
                     </div>
                 </div>

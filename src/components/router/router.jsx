@@ -34,11 +34,11 @@ const router = createBrowserRouter([
             },
             {
                 path: "addToys",
-                element: <AddToys></AddToys>
+                element: <PrivateRoute><AddToys></AddToys></PrivateRoute>
             },
             {
                 path: "myToys",
-                element: <MyToys></MyToys>
+                element: <PrivateRoute><MyToys></MyToys></PrivateRoute>
             },
             {
                 path: "updateInvention/:id",
@@ -48,6 +48,10 @@ const router = createBrowserRouter([
             {
                 path: "allToyDetails/:id",
                 element: <PrivateRoute><AllToyDetails></AllToyDetails></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/allInvention/${params.id}`)
+            }, {
+                path: "category/:id",
+                element: <PrivateRoute><CategoryDetails></CategoryDetails></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/allInvention/${params.id}`)
             }
         ]

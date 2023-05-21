@@ -2,14 +2,21 @@ import React, { useContext } from 'react';
 import google from '../../assets/image/googleSociasl.png';
 import { AuthContext } from './AuthProvider';
 import useTitle from '../../hooks/useTitle';
+import { useLocation, useNavigate } from 'react-router-dom';
 const SocialLogin = () => {
     const { googleLogin } = useContext(AuthContext);
+    const navigate=useNavigate();
+    const location=useLocation();
+
+    const from = location?.state?.from?.pathname || '/';
+
     useTitle("social Page")
     const handleGoogleSign = () => {
         googleLogin()
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.log(error.message);
