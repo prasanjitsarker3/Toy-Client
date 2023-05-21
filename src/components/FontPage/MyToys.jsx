@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../AuthenticationPage/AuthProvider';
 import MyToyCart from '../SharedPage/MyToyCart';
 import useTitle from '../../hooks/useTitle';
+import Swal from 'sweetalert2';
 
 const MyToys = () => {
     const { user } = useContext(AuthContext);
@@ -20,14 +21,35 @@ const MyToys = () => {
     }, [user])
 
     const handleDelete = (id) => {
-        fetch(`https://toy-tech-server.vercel.app/myInvention/${id}`, {
-            method: "DELETE"
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
         })
-            .then(res => res.json())
-            .then(data => {
-                const remaining = loadData.filter(invention => invention._id !== id)
-                setLoadData(remaining)
+            .then((result) => {
+                if (result.isConfirmed) {
+                    fetch(`https://toy-tech-server.vercel.app/myInvention/${id}`, {
+                        method: "DELETE"
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.deletedCount > 0) {
+                                Swal.fire(
+                                    'Deleted!',
+                                    'Your toy has been deleted',
+                                    'success'
+                                )
+                            }
+                            const remaining = loadData.filter(invention => invention._id !== id)
+                            setLoadData(remaining)
+                        })
+                }
             })
+
     }
     const handleSearch = () => {
         fetch(`https://toy-tech-server.vercel.app/inventionSearch/${search}`)
