@@ -6,7 +6,7 @@ import devery from '../../assets/image/delivery-truck.png'
 
 const CustomInfo = () => {
     return (
-        <div className=' py-12 bg bg-base-200 mb-5 px-5'>
+        <div className=' py-12 bg bg-base-100 mb-5 px-5'>
             <div className='grid grid-cols-1 md:grid-cols-4 gap-5 text-center'>
                 <div className='mx-auto'>
                     <img src={cart} alt="" className='mx-auto' srcset="" width={'70px'} height={'70px'} />
