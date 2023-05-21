@@ -26,7 +26,7 @@ const AddToys = () => {
     return (
         <div className='bg bg-base-200'>
             <div className='p-8'>
-                <h1 className='text-center'>Add Your Invention Science Toy</h1>
+                <h1 className='text-center text-lg font-serif py-3 text-green-500'>Add Your Invention Science Toy</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-5 py-3'>
                         <input placeholder='Seller Name' defaultValue={user?.displayName} {...register("sellerName")} className='h-[50px] px-5 rounded' />
@@ -53,7 +53,7 @@ const AddToys = () => {
                     {/* errors will return when field validation fails  */}
                     {errors.exampleRequired && <span>This field is required</span>}
                     <div className='py-3 flex justify-center'>
-                        <button className="btn btn-wide " type='submit'>Wide</button>
+                        <button className="btn btn-wide " type='submit'>Add Invention</button>
                     </div>
                     {/* <input type="submit" /> */}
                 </form>

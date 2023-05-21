@@ -10,11 +10,14 @@ import UpdateInvention from "../SharedPage/UpdateInvention";
 import AllToyDetails from "../SharedPage/AllToyDetails";
 import PrivateRoute from "./PrivateRoute";
 import CategoryDetails from "../SharedPage/CategoryDetails";
+import ErrorPage from "../FontPage/ErrorPage";
+import Blog from "../FontPage/Blog";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <MainLayOut></MainLayOut>,
+        errorElement:<ErrorPage></ErrorPage>,
         children: [
             {
                 path: "/",
@@ -39,6 +42,10 @@ const router = createBrowserRouter([
             {
                 path: "myToys",
                 element: <PrivateRoute><MyToys></MyToys></PrivateRoute>
+            },
+            {   
+                path:"blog",
+                element:<Blog></Blog>
             },
             {
                 path: "updateInvention/:id",

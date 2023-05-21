@@ -5,6 +5,7 @@ import "react-tooltip/dist/react-tooltip.css";
 // import "./styles.css";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import useTitle from '../../hooks/useTitle';
+import inv from '../../assets/image/inv.avif'
 
 const Header = () => {
     const { user, userLogOut } = useContext(AuthContext);
@@ -29,7 +30,7 @@ const Header = () => {
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-base font-serif">
                             <li><Link to='/'>Home</Link></li>
                             <li><Link to='/allToys'>All Toys</Link></li>
-                            <li><Link >Blog</Link></li>
+                            <li><Link to='/blog'>Blog</Link></li>
                             {/* <img src={user?.photoURL} alt="" srcset="" /> */}
                             {
                                 user?.email ? <>
@@ -48,13 +49,15 @@ const Header = () => {
                         </ul>
                     </div>
                     <a ></a>
-                    <Link className="normal-case text-2xl font-serif" to='/'>Invention Science</Link>
+                    <Link className="normal-case text-2xl font-serif flex items-center gap-2" to='/'>
+                        <img src={inv} alt=""  height={'75px'} width={'75px'}/>
+                        Invention Science</Link>
                 </div>
                 <div className="navbar-end hidden lg:flex me">
                     <ul className="menu menu-horizontal px-1 text-base  font-serif">
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to='/allToys'>All Toys</Link></li>
-                        <li><Link >Blog</Link></li>
+                        <li><Link to='/blog'>Blog</Link></li>
                         {
                             user?.email ? <>
                                 <li><Link to='/myToys'>My Toys</Link></li>
