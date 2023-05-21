@@ -12,7 +12,7 @@ const MyToys = () => {
     useTitle('myToys')
     console.log(search);
     useEffect(() => {
-        fetch(`http://localhost:5000/myInvention/${user?.email}`)
+        fetch(`https://toy-tech-server.vercel.app/myInvention/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setLoadData(data);
@@ -20,7 +20,7 @@ const MyToys = () => {
     }, [user])
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/myInvention/${id}`, {
+        fetch(`https://toy-tech-server.vercel.app/myInvention/${id}`, {
             method: "DELETE"
         })
             .then(res => res.json())
@@ -30,7 +30,7 @@ const MyToys = () => {
             })
     }
     const handleSearch = () => {
-        fetch(`http://localhost:5000/inventionSearch/${search}`)
+        fetch(`https://toy-tech-server.vercel.app/inventionSearch/${search}`)
             .then(res => res.json())
             .then(data => {
                 setLoadData(data)

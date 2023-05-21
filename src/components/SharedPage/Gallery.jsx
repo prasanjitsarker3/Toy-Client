@@ -5,7 +5,7 @@ import 'aos/dist/aos.css';
 const Gallery = () => {
     const [data, setData] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/gallery')
+        fetch('https://toy-tech-server.vercel.app/gallery')
             .then(res => res.json())
             .then(data => {
                 setData(data);

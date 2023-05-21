@@ -50,7 +50,7 @@ const Header = () => {
                     </div>
                     <a ></a>
                     <Link className="normal-case text-2xl font-serif flex items-center gap-2" to='/'>
-                        <img src={inv} alt=""  height={'75px'} width={'75px'}/>
+                        <img src="https://img.freepik.com/free-vector/red-atom-with-core-orbits-electrons-isolated-3d-nuclear-chemistry-technology-concept_333792-89.jpg?w=740&t=st=1684670081~exp=1684670681~hmac=74abe9f0e9e1f308e25fc0fef9fac73ba2a4a9d73d91def9e14d930c01e7f7e8" alt=""  height={'75px'} width={'75px'}/>
                         Invention Science</Link>
                 </div>
                 <div className="navbar-end hidden lg:flex me">

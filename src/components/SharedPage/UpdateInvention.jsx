@@ -10,7 +10,7 @@ const UpdateInvention = () => {
     const { sellerName, toyName, email, Category, details, price, rating, quantity, photo, _id } = inventionUpdateLoader;
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
-        fetch(`http://localhost:5000/invention/${_id}`, {
+        fetch(`https://toy-tech-server.vercel.app/invention/${_id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'

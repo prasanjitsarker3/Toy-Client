@@ -10,7 +10,7 @@ const AddToys = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
         data.invention = selectedInvention;
-        fetch('http://localhost:5000/postInvention', {
+        fetch('https://toy-tech-server.vercel.app/postInvention', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

@@ -4,7 +4,7 @@ import PopularCart from './PopularCart';
 const PopularToy = () => {
     const [data, setData] = useState([])
     useEffect(() => {
-        fetch("http://localhost:5000/popular")
+        fetch("https://toy-tech-server.vercel.app/popular")
             .then(res => res.json())
             .then(data => {
                 setData(data)

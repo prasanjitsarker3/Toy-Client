@@ -50,16 +50,16 @@ const router = createBrowserRouter([
             {
                 path: "updateInvention/:id",
                 element: <UpdateInvention></UpdateInvention>,
-                loader: ({ params }) => fetch(`http://localhost:5000/allInvention/${params.id}`)
+                loader: ({ params }) => fetch(`https://toy-tech-server.vercel.app/allInvention/${params.id}`)
             },
             {
                 path: "allToyDetails/:id",
                 element: <PrivateRoute><AllToyDetails></AllToyDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/allInvention/${params.id}`)
+                loader: ({ params }) => fetch(`https://toy-tech-server.vercel.app/allInvention/${params.id}`)
             }, {
                 path: "category/:id",
                 element: <PrivateRoute><CategoryDetails></CategoryDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/allInvention/${params.id}`)
+                loader: ({ params }) => fetch(`https://toy-tech-server.vercel.app/allInvention/${params.id}`)
             }
         ]
     }

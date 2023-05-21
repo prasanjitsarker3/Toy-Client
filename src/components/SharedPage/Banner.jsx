@@ -19,7 +19,7 @@ const Banner = () => {
                             <button className="btn btn-success">Explore </button>
                         </div>
                         <div data-aos="fade-left" class="md:text-right">
-                            <img src={banner} alt="" srcset="" class="max-w-full mx-auto md:max-w-md mt-8 md:mt-0 rounded" />
+                            <img src="https://img.freepik.com/free-vector/scientist-doing-experiment-science-lab_1308-38252.jpg?size=626&ext=jpg&ga=GA1.2.2060036261.1681297115&semt=ais" alt="" srcset="" class="max-w-full mx-auto md:max-w-md mt-8 md:mt-0 rounded" />
                         </div>
 
                     </div>
